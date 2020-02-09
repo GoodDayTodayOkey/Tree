@@ -1,0 +1,117 @@
+{
+  "users": [
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7a",
+      "position": "Director",
+      "attributes": {
+        "sex": "male",
+        "age": "45",
+        "name1": "Ivan",
+        "name2": "Ivan",
+        "name3": "Ivan"
+      },
+      "parent": "",
+      "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b"]
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b",
+      "position": "Chief Execute Officer",
+      "attributes": {
+        "sex": "female",
+        "age": "38",
+        "name": "Maria"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7a",
+      "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7c", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d"]
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7c",
+      "position": "Vice President",
+      "attributes": {
+        "sex": "male",
+        "age": "28",
+        "name": "Egor"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b",
+      "children": []
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
+      "position": "Chief Financial Officer",
+      "attributes": {
+        "sex": "male",
+        "age": "26",
+        "name": "Igor"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b",
+      "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7f", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7h" ]
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
+      "position": "Controller",
+      "attributes": {
+        "sex": "female",
+        "age": "21",
+        "name": "Dasha"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
+      "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7g", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7i", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7j"]
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7f",
+      "position": "Treasurer",
+      "attributes": {
+        "sex": "female",
+        "age": "23",
+        "name": "Lyuba"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
+      "children": []
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7g",
+      "position": "Internal Auditor",
+      "attributes": {
+        "sex": "male",
+        "age": "22",
+        "name": "Victor"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
+      "children": []
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7h",
+      "position": "Managerial Accountant",
+      "attributes": {
+        "sex": "female",
+        "age": "21",
+        "name": "Vika"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
+      "children": []
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7i",
+      "position": "Financial Accountant",
+      "attributes": {
+        "sex": "male",
+        "age": "25",
+        "name": "Evgeny"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
+      "children": []
+    },
+    {
+      "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7j",
+      "position": "Tax Accountant",
+      "attributes": {
+        "sex": "male",
+        "age": "21",
+        "name": "Andrew"
+      },
+      "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
+      "children": []
+    }
+
+  ]
+}
