@@ -1,4 +1,4 @@
-import { types } from './actions'
+import types from './types'
 
 const initialTabsState = {
   data: {
@@ -20,12 +20,10 @@ const users = (state = initialUsersState, action) => {
       }
     case types.removeUser:
       return {
-        ...state,
         data: [...action.payload]
       }
     case types.updateUser:
       return {
-        ...state,
         data: [...action.payload]
       }
     default:

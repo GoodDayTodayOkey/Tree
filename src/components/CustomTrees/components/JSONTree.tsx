@@ -1,15 +1,6 @@
 import React from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      backgroundColor: 'transparent',
-    },
-  }),
-);
-
-
 function JSONTree({ users }) {
   const classes = useStyles();
 
@@ -26,17 +17,27 @@ function JSONTree({ users }) {
   }
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div>
-        <div>Prepared tree:</div>
-        <pre>{`${JSON.stringify({ ...renderTreeItem(users) }, undefined, 4)}`}</pre>
+    <div className={classes.jsonTree}>
+      <div className={classes.jsonTree__preparedTree}>
+        <div className={classes.jsonTree__title}>Prepared tree:</div>
+        <pre className={classes.jsonTree__item}>{`${JSON.stringify({ ...renderTreeItem(users) }, undefined, 4)}`}</pre>
       </div>
-      <div>
-        <div>Of store:</div>
-        <pre>{`${JSON.stringify({ users }, undefined, 4)}`}</pre>
+      <div className={classes.jsonTree__store}>
+        <div className={classes.jsonTree__title}>Of store:</div>
+        <pre className={classes.jsonTree__item}>{`${JSON.stringify({ users }, undefined, 4)}`}</pre>
       </div>
     </div>
   );
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    jsonTree: { display: 'flex' },
+    jsonTree__preparedTree: {},
+    jsonTree__title: {},
+    jsonTree__item: {},
+    jsonTree__store: {},
+  }),
+);
 
 export default JSONTree;

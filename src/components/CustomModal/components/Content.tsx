@@ -11,27 +11,6 @@ import TabPanel from '../../CustomTabs/components/TabPanel';
 import CustomPaper from '../../CustomPaper/CustomPaper';
 import { selectModalContent, selectModal } from '../../../store/selectors';
 
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    paper: {
-      position: 'absolute',
-      width: 388,
-      maxHeight: 500,
-      height: '100%',
-      backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)'
-    },
-
-  }),
-);
-
-
 function Content({ parentId, handleChangeModalStatus }) {
   const classes = useStyles();
   const tabs = useSelector(selectModal);
@@ -66,8 +45,8 @@ function Content({ parentId, handleChangeModalStatus }) {
   }
 
   return (
-    <div className={classes.paper}>
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+    <div className={classes.content}>
+      <div className={classes.content__item} style={{}}>
         <IconButton aria-label="delete" onClick={handleChangeModalStatus(false)}>
           <CloseIcon color="error" />
         </IconButton>
@@ -79,5 +58,29 @@ function Content({ parentId, handleChangeModalStatus }) {
     </div>
   );
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    content: {
+      position: 'absolute',
+      width: 388,
+      maxHeight: 500,
+      height: '100%',
+      backgroundColor: theme.palette.background.paper,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    },
+    content__item: {
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'flex-end'
+    }
+
+  }),
+);
 
 export default Content;

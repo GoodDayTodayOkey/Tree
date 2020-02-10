@@ -5,11 +5,12 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 function Attributes({ attributes, updateAttributes, removeAttributes }) {
+  const classes = useStyles();
   return (
     <>
       {attributes.map((attr, index) =>
-        <div key={index} style={{ display: 'flex', marginTop: 10, marginLeft: 10, paddingBottom: 10 }}>
-          <div style={{ width: 100 }}>
+        <div className={classes.attributes} key={index} style={{}}>
+          <div className={classes.attributes__field_position_left} >
             <TextField
               id="outlined-basic"
               label="Name"
@@ -17,9 +18,10 @@ function Attributes({ attributes, updateAttributes, removeAttributes }) {
               value={attr.name}
               onChange={updateAttributes({ id: index, attr: 'name' })}
               error={attr.error[0]}
+              className={classes.attributes__input}
             />
           </div>
-          <div style={{ width: 100, paddingLeft: 10 }}>
+          <div className={classes.attributes__field_position_right}>
             <TextField
               id="outlined-basic"
               label="Value"
@@ -27,6 +29,7 @@ function Attributes({ attributes, updateAttributes, removeAttributes }) {
               value={attr.value}
               onChange={updateAttributes({ id: index, attr: 'value' })}
               error={attr.error[1]}
+              className={classes.attributes__input}
             />
           </div>
           <IconButton aria-label="delete" onClick={removeAttributes({ id: index })}>
@@ -36,5 +39,24 @@ function Attributes({ attributes, updateAttributes, removeAttributes }) {
       )}
     </>)
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    attributes: {
+      display: 'flex',
+      marginTop: 10,
+      marginLeft: 10,
+      paddingBottom: 10
+    },
+    attributes__field_position_left: {
+      width: 100
+    },
+    attributes__field_position_right: {
+      width: 100,
+      paddingLeft: 10
+    },
+    attributes__input: {}
+  }),
+);
 
 export default Attributes;

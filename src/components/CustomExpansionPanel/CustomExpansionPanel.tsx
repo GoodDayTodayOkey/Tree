@@ -14,31 +14,6 @@ import { useDispatch } from 'react-redux';
 import { removeUser } from '../../store/actions';
 import List from './List';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      // height: 216,
-      flexGrow: 1,
-      width: '250px'
-    },
-    heading: {
-      fontSize: theme.typography.pxToRem(15),
-      fontWeight: theme.typography.fontWeightRegular,
-    },
-    MuiExpansionPanelSummary__content: {
-      margin: '0 !important',
-      width: '100%',
-      paddingLeft: 0
-    },
-    MuiExpansionPanelSummary__root: {
-      paddingLeft: '10px !important'
-    },
-    MuiIconButton__root: {
-      padding: 0,
-    }
-  }),
-);
-
 function CustomExpansionPanel({ position, attrs, parentId }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(false);
@@ -53,7 +28,7 @@ function CustomExpansionPanel({ position, attrs, parentId }) {
     toggleStateModal(status)
   }
   return (
-    <div className={classes.root} onMouseEnter={() => setDisabled(false)} onMouseLeave={() => setDisabled(true)}>
+    <div className={classes.expansionPanel} onMouseEnter={() => setDisabled(false)} onMouseLeave={() => setDisabled(true)}>
       <ExpansionPanel expanded={value} onClick={(event) => {
         event.stopPropagation();
         setValue(!value);
@@ -64,11 +39,11 @@ function CustomExpansionPanel({ position, attrs, parentId }) {
           id="panel1a-header"
           classes={{ content: classes.MuiExpansionPanelSummary__content, root: classes.MuiExpansionPanelSummary__root }}
         >
-          <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
-            <div style={{ height: '100%', display: 'flex', alignItems: 'center' }} >
-              <Typography className={classes.heading}>{position}</Typography>
+          <div className={classes.expansionPanel__group}>
+            <div className={classes.expansionPanel__title}>
+              <Typography className={classes.expansionPanel__text}>{position}</Typography>
             </div>
-            <div style={{ minWidth: '50px', display: !disabled ? 'flex' : 'none', alignItems: 'center' }}>
+            <div className={classes.expansionPanel__controls} style={{ display: !disabled ? 'flex' : 'none', }}>
               <IconButton
                 aria-label="add"
                 onClick={handleChangeModalStatus(true)}
@@ -89,9 +64,9 @@ function CustomExpansionPanel({ position, attrs, parentId }) {
           </div>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails >
-          <div>
+          <div className={classes.expansionPanel__list}>
             <List attrs={attrs} />
-          </div>
+          </div >
           <CustomModal isOpen={isOpen} handleChangeModalStatus={handleChangeModalStatus} parentId={parentId} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -99,6 +74,43 @@ function CustomExpansionPanel({ position, attrs, parentId }) {
   );
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    expansionPanel: {
+      flexGrow: 1,
+      width: '250px'
+    },
+    expansionPanel__text: {
+      fontSize: theme.typography.pxToRem(15),
+      fontWeight: theme.typography.fontWeightRegular,
+    },
+    expansionPanel__group: {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'space-between'
+    },
+    expansionPanel__title: {
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center'
+    },
+    expansionPanel__controls: {
+      minWidth: '50px',
+      alignItems: 'center'
+    },
+    expansionPanel__list: {},
+    MuiExpansionPanelSummary__content: {
+      margin: '0 !important',
+      width: '100%',
+      paddingLeft: 0
+    },
+    MuiExpansionPanelSummary__root: {
+      paddingLeft: '10px !important'
+    },
+    MuiIconButton__root: {
+      padding: 0,
+    }
+  }),
+);
+
 export default CustomExpansionPanel;
-
-

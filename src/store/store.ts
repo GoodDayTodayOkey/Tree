@@ -8,16 +8,18 @@ const bindMiddleware = middleware => {
     return composeWithDevTools(applyMiddleware(...middleware))
   }
   return applyMiddleware(...middleware)
-}
+};
+
 const rootReducer = combineReducers({
   users,
   tabs,
 });
+
 export const initStore = () => {
   return createStore(
     rootReducer,
     bindMiddleware([thunkMiddleware])
   )
-}
+};
 
 export type IStore = ReturnType<typeof createStore>;

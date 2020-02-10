@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Attributes from './Attributes';
 import Successors from './Successors';
 

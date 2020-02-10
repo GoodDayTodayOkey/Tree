@@ -1,16 +1,13 @@
 
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
 
-function TabPanel(props: TabPanelProps) {
+function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  const classes = useStyles();
 
   return (
     <Typography
@@ -20,10 +17,18 @@ function TabPanel(props: TabPanelProps) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+      className={classes.tabPanel}
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      {value === index && <Box className={classes.tabPanel__title} p={3}>{children}</Box>}
     </Typography>
   );
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    tabPanel: {},
+    tabPanel__title: {},
+  }),
+);
 
 export default TabPanel

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Tab from '@material-ui/core/Tab';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import CustomTabs from '../components/CustomTabs/CustomTabs';
 import CustomTrees from '../components/CustomTrees/CustomTrees';
@@ -9,6 +10,7 @@ import { loadData } from '../store/actions';
 import { selectTree, selectUsers } from '../store/selectors';
 
 function HomePage() {
+  const classes = useStyles();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,7 +33,7 @@ function HomePage() {
   }
 
   return (
-    <div>
+    <div className={classes.homePage}>
       <CustomTabs
         makeBar={makeBar}
         makePanel={makePanel}
@@ -39,5 +41,11 @@ function HomePage() {
     </div>
   )
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    homePage: {},
+  }),
+);
 
 export default HomePage

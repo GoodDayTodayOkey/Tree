@@ -8,23 +8,6 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 import CustomAttr from '../../CustomExpansionPanel/CustomExpansionPanel'
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    treeView: {
-      maxWidth: '400px',
-      backgroundColor: 'transparent'
-    },
-    treeItem__item: {
-      backgroundColor: 'transparent',
-      margin: '10px'
-    },
-    treeItem__content: {
-      backgroundColor: 'transparent !important',
-    },
-  }),
-);
-
-
 function ExplorerTree({ users }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState<string[]>([]);
@@ -68,5 +51,21 @@ function ExplorerTree({ users }) {
     </TreeView>
   );
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    treeView: {
+      maxWidth: '400px',
+      backgroundColor: 'transparent'
+    },
+    treeItem__item: {
+      backgroundColor: 'transparent',
+      margin: '10px'
+    },
+    treeItem__content: {
+      backgroundColor: 'transparent !important',
+    },
+  }),
+);
 
 export default ExplorerTree;
