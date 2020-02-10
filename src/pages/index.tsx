@@ -1,31 +1,12 @@
-// import React from 'react';
-// import { useSelector } from 'react-redux';
-
-
-// function App() {
-
-//   const store = useSelector(state => state);
-//   return (
-//     <div>
-//       Welcome to Next.js!?
-//       {`${store.count.count}`}
-//     </div>
-//   )
-// }
-
-// export default App
-
-
-import fetch from 'isomorphic-unfetch'
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadData } from '../store/actions';
-import Tree from '../components/Tree/Tree';
 import Tab from '@material-ui/core/Tab';
-import accessibilityProps from '../helpers/accessibilityProps';
+
 import CustomTabs from '../components/CustomTabs/CustomTabs';
-import CustomTree from '../components/CustomTree/CustomTree';
+import CustomTrees from '../components/CustomTrees/CustomTrees';
 import TabPanel from '../components/CustomTabs/components/TabPanel';
+import { loadData } from '../store/actions';
+import { selectTree, selectUsers } from '../store/selectors';
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -34,15 +15,27 @@ function HomePage() {
     dispatch(loadData());
   }, []);
 
-  const tabs = useSelector(state => state.tabs.data.tree);
-  const users = useSelector(state => state.users.data);
+  const tabs = useSelector(selectTree);
+  const users = useSelector(selectUsers);
+  const makeBar = () => tabs.map((tab, index) => <Tab key={index} label={tab} {...accessibilityProps(index)} />)
+  const makePanel = (value) => tabs.map((tab, index) => (
+    <TabPanel key={index} value={value} index={index}>
+      <CustomTrees kind={tab} users={users} />
+    </TabPanel>));
+
+  const accessibilityProps = (index) => {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
+    };
+  }
+
   return (
     <div>
       <CustomTabs
-        bar={() => tabs.map((tab, index) => <Tab key={index} label={tab} {...accessibilityProps(index)} />)}
-        panel={(value) => tabs.map((tab, index) => <TabPanel key={index} value={value} index={index}><CustomTree kind={tab} users={users} /></TabPanel>)}
+        makeBar={makeBar}
+        makePanel={makePanel}
       />
-      {/* <Tree /> */}
     </div>
   )
 }

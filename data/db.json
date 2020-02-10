@@ -4,11 +4,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7a",
       "position": "Director",
       "attributes": {
+        "name": "Ivan",
         "sex": "male",
         "age": "45",
-        "name1": "Ivan",
-        "name2": "Ivan",
-        "name3": "Ivan"
+        "children": "2",
+        "height": "176"
       },
       "parent": "",
       "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b"]
@@ -17,9 +17,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b",
       "position": "Chief Execute Officer",
       "attributes": {
+        "name": "Maria",
         "sex": "female",
         "age": "38",
-        "name": "Maria"
+        "children": "0",
+        "height": "160"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7a",
       "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7c", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d"]
@@ -28,9 +30,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7c",
       "position": "Vice President",
       "attributes": {
+        "name": "Egor",
         "sex": "male",
         "age": "28",
-        "name": "Egor"
+        "children": "1",
+        "height": "180"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b",
       "children": []
@@ -39,9 +43,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
       "position": "Chief Financial Officer",
       "attributes": {
+        "name": "Igor",
         "sex": "male",
         "age": "26",
-        "name": "Igor"
+        "children": "0",
+        "height": "200"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7b",
       "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7f", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7h" ]
@@ -50,9 +56,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
       "position": "Controller",
       "attributes": {
+        "name": "Dasha",
         "sex": "female",
         "age": "21",
-        "name": "Dasha"
+        "children": "1",
+        "height": "170"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
       "children": ["2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7g", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7i", "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7j"]
@@ -61,9 +69,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7f",
       "position": "Treasurer",
       "attributes": {
+        "name": "Lyuba",
         "sex": "female",
         "age": "23",
-        "name": "Lyuba"
+        "children": "0",
+        "height": "168"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
       "children": []
@@ -72,9 +82,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7g",
       "position": "Internal Auditor",
       "attributes": {
+        "name": "Victor",
         "sex": "male",
         "age": "22",
-        "name": "Victor"
+        "children": "1",
+        "height": "175"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
       "children": []
@@ -83,9 +95,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7h",
       "position": "Managerial Accountant",
       "attributes": {
+        "name": "Vika",
         "sex": "female",
         "age": "21",
-        "name": "Vika"
+        "children": "1",
+        "height": "158"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
       "children": []
@@ -94,9 +108,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7i",
       "position": "Financial Accountant",
       "attributes": {
+        "name": "Evgeny",
         "sex": "male",
         "age": "25",
-        "name": "Evgeny"
+        "children": "1",
+        "height": "200"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
       "children": []
@@ -105,9 +121,11 @@
       "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7j",
       "position": "Tax Accountant",
       "attributes": {
+        "name": "Andrew",
         "sex": "male",
         "age": "21",
-        "name": "Andrew"
+        "children": "1",
+        "height": "174"
       },
       "parent": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7e",
       "children": []

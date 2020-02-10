@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
-import TabPanel from './components/TabPanel';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -12,13 +11,10 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       backgroundColor: theme.palette.background.paper,
     },
-    "root.": {
-      backgroundColor: 'red',
-    }
   }),
 );
 
-function CustomTabs({ bar, panel }) {
+function CustomTabs({ makeBar, makePanel }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -31,10 +27,10 @@ function CustomTabs({ bar, panel }) {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} TabIndicatorProps={{ style: { backgroundColor: "red" } }} onChange={handleChange} aria-label="simple tabs example">
-          {bar()}
+          {makeBar()}
         </Tabs>
       </AppBar>
-      {panel(value)}
+      {makePanel(value)}
     </div>
   );
 }

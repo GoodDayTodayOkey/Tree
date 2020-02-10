@@ -20,7 +20,6 @@ export const removeUser = (payload) => (dispatch, getState) => {
       return getRemovedUsersID({ id: child });
     })
   }
-
   getRemovedUsersID({ id: payload });
   const newUsers = users.filter(user => removedIds.every(removedId => user.id !== removedId));
   const newUsersWithoutRemovedChildren = newUsers.map(user => {
@@ -31,9 +30,6 @@ export const removeUser = (payload) => (dispatch, getState) => {
 
 
 export const updateUser = ({ state, kind, parentId }) => (dispatch, getState) => {
-  const k = state;
-  const l = kind;
-  const m = parentId;
   const getUpdatedUsersWithChildren = () => {
     const currentState = state.map(item => ({ id: item.id, position: item.position }))
     const users = getState().users.data;
@@ -44,7 +40,6 @@ export const updateUser = ({ state, kind, parentId }) => (dispatch, getState) =>
       attributes: {}, parent: parentId, children: [],
     }));
     const updatedUsers = users.map(user => {
-
       if (changedUsers.some(changedUser => changedUser.id === user.id)) {
         return { ...user, ...changedUsers.filter(changedUser => changedUser.id === user.id)[0] }
       }
@@ -56,6 +51,7 @@ export const updateUser = ({ state, kind, parentId }) => (dispatch, getState) =>
 
     return [...updatedUsers, ...createdUsers];
   }
+
   const getUpdatedUsersWithAttributes = () => {
     const users = getState().users.data;
     const attributes = state.reduce((acc, item) => {
@@ -65,10 +61,6 @@ export const updateUser = ({ state, kind, parentId }) => (dispatch, getState) =>
     const updatedUsers = users.map(user => parentId === user.id ? { ...user, attributes } : user)
     return updatedUsers;
   }
-
-
   const updatedUsers = kind === 'children' ? getUpdatedUsersWithChildren() : getUpdatedUsersWithAttributes();
-
-
   return dispatch({ type: types.updateUser, payload: updatedUsers })
 }
