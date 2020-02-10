@@ -15,7 +15,6 @@ const convertUserWithRemovedChildren = ({ users, id }) => {
   return updatedUsersWithRemovedChildren;
 }
 
-
 const convertUpdatedUser = ({ users, state, parentId, kind }) => {
   const selectUpdatedUsersWithChildren = () => {
     const updatedState = state.map(item => ({ id: item.id, position: item.position }))
