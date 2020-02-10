@@ -10,7 +10,6 @@ export const loadData = () => async (dispatch) => {
 export const removeUser = (id) => (dispatch, getState) => {
   const users = getState().users.data;
   const updatedUsers = convertUserWithRemovedChildren({ users, id })
-  debugger;
   return dispatch({ type: types.removeUser, payload: updatedUsers })
 }
 
