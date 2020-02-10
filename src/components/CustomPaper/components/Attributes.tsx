@@ -12,7 +12,6 @@ function Attributes({ attributes, updateAttributes, removeAttributes }) {
         <div className={classes.attributes} key={index} style={{}}>
           <div className={classes.attributes__field_position_left} >
             <TextField
-              id="outlined-basic"
               label="Name"
               variant="outlined"
               value={attr.name}
@@ -23,7 +22,6 @@ function Attributes({ attributes, updateAttributes, removeAttributes }) {
           </div>
           <div className={classes.attributes__field_position_right}>
             <TextField
-              id="outlined-basic"
               label="Value"
               variant="outlined"
               value={attr.value}

@@ -11,7 +11,6 @@ function Successors({ successors, updateSuccessors, removeSuccessors }) {
       {successors.map((successor, index) => (
         <div className={classes.successors__field} key={index} style={{}}>
           <TextField
-            id="outlined-basic"
             label="Name"
             variant="outlined"
             value={successor.position}
