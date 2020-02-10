@@ -18,9 +18,9 @@ const convertUserWithRemovedChildren = ({ users, id }) => {
 
 const convertUpdatedUser = ({ users, state, parentId, kind }) => {
   const selectUpdatedUsersWithChildren = () => {
-    debugger;
     const updatedState = state.map(item => ({ id: item.id, position: item.position }))
     const changedIds = updatedState.map(user => user.id);
+    const removedIds = users.filter(user => user.id === parentId)[0].children.filter(id => changedIds.every(changedId => id !== changedId));
     const changedUsers = updatedState.filter(user => users.some(item => item.id === user.id));
     const createdUsers = updatedState.filter(user => users.every(item => item.id !== user.id)).map(createdUser => ({
       ...createdUser,
@@ -36,7 +36,7 @@ const convertUpdatedUser = ({ users, state, parentId, kind }) => {
       return user
     })
 
-    return [...updatedUsers, ...createdUsers];
+    return [...updatedUsers, ...createdUsers].filter(user => removedIds.every(removedId => removedId !== user.id));
   }
 
   const selectUpdatedUsersWithAttributes = () => {
