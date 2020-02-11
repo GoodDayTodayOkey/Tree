@@ -56,7 +56,7 @@ function CustomPaper({ kind, list, parentId, toggleStateModal }) {
           < AddCircleIcon color="primary" />
         </IconButton>
         <Button variant="contained" color="primary" href="#contained-buttons" onClick={saveInputsValue}>
-          Save
+          Save {`${kind}`}
         </Button>
       </div>
     </div>)
